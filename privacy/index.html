@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sakerhet</title>
+<style>
+  body { margin: 0; background: #d9dde2; font: 12px/1.6 Verdana, Arial, Helvetica, sans-serif; color: #333; }
+  #wrap { max-width: 920px; margin: 0 auto; background: #fff; border-left: 1px solid #9aa3ad; border-right: 1px solid #9aa3ad; }
+  #header { background: #1f4e79; background: linear-gradient(#2d6aa3, #17385a); padding: 22px 24px 18px; border-bottom: 3px solid #f0a30a; }
+  #header h1 { margin: 0; font: bold 38px Georgia, "Times New Roman", serif; color: #fff; text-shadow: 2px 2px 2px #0b1d30; }
+  #header p { margin: 2px 0 0; font: italic 13px Georgia, "Times New Roman", serif; color: #c9dcf0; }
+  #nav { margin: 0; padding: 0; list-style: none; background: #0f2a45; overflow: hidden; }
+  #nav li { float: left; }
+  #nav a { display: block; padding: 9px 20px; color: #fff; text-decoration: none; font-weight: bold; border-right: 1px solid #25476a; }
+  #nav a:hover { background: #2d6aa3; }
+  #cols { display: flex; align-items: flex-start; }
+  #side { width: 200px; flex: none; padding: 16px 0 16px 16px; }
+  #main { flex: 1; min-width: 0; padding: 8px 24px 20px 20px; }
+  .box { border: 1px solid #b7c0ca; margin-bottom: 16px; background: #f6f8fa; }
+  .box h3 { margin: 0; padding: 5px 10px; font: bold 12px Verdana, Arial, sans-serif; color: #fff; background: #2d6aa3; }
+  .box ul { margin: 0; padding: 6px 10px 8px 26px; }
+  .box li { margin: 3px 0; }
+  .box p { margin: 0; padding: 8px 10px; }
+  h2 { font: bold 22px Georgia, "Times New Roman", serif; color: #17385a; margin: 22px 0 6px; padding-bottom: 3px; border-bottom: 1px dotted #2d6aa3; }
+  #main h2:first-child { margin-top: 12px; }
+  a { color: #1a5fb4; }
+  a:hover { color: #c0392b; }
+  code { font-family: "Courier New", Courier, monospace; background: #eef1f4; border: 1px solid #d3d9df; padding: 0 3px; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0; }
+  th, td { border: 1px solid #b7c0ca; padding: 5px 8px; text-align: left; vertical-align: top; }
+  th { background: #2d6aa3; color: #fff; }
+  tr:nth-child(even) td { background: #f3f6f9; }
+  .note { border: 1px solid #e0b64a; background: #fff8dc; padding: 8px 12px; margin: 10px 0; }
+  ul.list { margin: 6px 0; padding-left: 22px; }
+  #footer { background: #0f2a45; color: #aebdcc; text-align: center; padding: 12px; font-size: 11px; border-top: 3px solid #f0a30a; }
+  #footer a { color: #fff; }
+  @media (max-width: 700px) {
+    #cols { display: block; }
+    #side { width: auto; padding: 12px 12px 0; }
+    #main { padding: 8px 14px 20px; }
+    #nav li { float: none; }
+    #nav a { border-right: 0; border-bottom: 1px solid #25476a; }
+  }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
+    <h1>Sakerhet</h1>
+    <p>A free Discord bot to help keep your server safe</p>
+  </div>
+  <ul id="nav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/privacy">Privacy</a></li>
+    <li><a href="/server">Discord Server</a></li>
+    <li><a href="https://github.com/kynorie/sakerhet">GitHub</a></li>
+  </ul>
+
+  <div id="cols">
+    <div id="side">
+      <div class="box">
+        <h3>Quick links</h3>
+        <ul>
+          <li><a href="/#commands">Commands</a></li>
+          <li><a href="/#anonymous">Anonymous messages</a></li>
+          <li><a href="/#bulkdelete">Bulk delete</a></li>
+          <li><a href="/#lockdown">Lockdown</a></li>
+          <li><a href="/#raids">Raid protection</a></li>
+          <li><a href="/#links">Bad links</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Quick facts</h3>
+        <ul>
+          <li>Written in Rust</li>
+          <li>Free and open source</li>
+          <li>Status: still being built</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="main">
+
+    <section id="home">
+      <h2>Welcome to Sakerhet</h2>
+      <p>Sakerhet is the Swedish word for security. It is a Discord bot written in Rust. It helps keep your server safe. It stops raids, deletes bad links, locks your server when needed, and lets people send anonymous messages.</p>
+
+      <div class="note"><b>Status:</b> This bot is still being built. Some things on this page may not work yet.</div>
+
+      <h2>When you add the bot</h2>
+      <p>The bot makes a new category and a new text channel called <b>Sakerhet</b>. Only the owner and admins can see it. The bot posts a welcome message there. If anyone types in that channel, the message is deleted right away.</p>
+      <p>The bot asks for these permissions: Manage Channels, Manage Roles, Manage Messages, Kick Members, Read Message History, Send Messages and Embed Links.</p>
+
+      <h2 id="commands">Commands</h2>
+      <table>
+        <tr><th>Command</th><th>Who</th><th>What it does</th></tr>
+        <tr><td><code>/help</code></td><td>Everyone</td><td>Shows the list of commands.</td></tr>
+        <tr><td><code>/github</code></td><td>Everyone</td><td>Gives the link to the GitHub page.</td></tr>
+        <tr><td><code>/privacy</code></td><td>Everyone</td><td>Shows what the bot stores.</td></tr>
+        <tr><td><code>/anonsend</code></td><td>Everyone</td><td>Sends an anonymous message.</td></tr>
+        <tr><td><code>/bulkdelete</code></td><td>Everyone</td><td>Deletes your own messages. Needs your bulkdelete password.</td></tr>
+        <tr><td><code>/forgetme</code></td><td>Everyone</td><td>Deletes the data the bot stores about you.</td></tr>
+        <tr><td><code>/lockdown</code></td><td>Admins</td><td>Locks the server.</td></tr>
+        <tr><td><code>/unlock</code></td><td>Admins</td><td>Ends the lockdown.</td></tr>
+        <tr><td><code>/raidstatus</code></td><td>Admins</td><td>Shows how suspicious the server looks right now.</td></tr>
+        <tr><td><code>/config</code></td><td>Admins</td><td>Changes the raid settings for your server.</td></tr>
+        <tr><td><code>/nsfwadd</code></td><td>Bot owner</td><td>Adds a link to the blocked list.</td></tr>
+      </table>
+      <p>If you run an admin command without admin permissions, the bot tells you that you lack administrator permissions.</p>
+
+      <h2 id="anonymous">Anonymous messages</h2>
+      <p>Run <code>/anonsend</code>. Only you can see the bot's reply. Press the button to open a form. Type your message. You can also type a nickname. If you leave the nickname empty, it uses <b>Anonymous</b>.</p>
+      <p>The bot then posts it in the channel, like this: <code>Anonymous said: Claude is a good AI Model.</code></p>
+      <p>The bot saves only the nickname and the message. It never saves your Discord user ID or your profile picture.</p>
+
+      <h2 id="bulkdelete">Bulk delete</h2>
+      <p>Run <code>/bulkdelete</code> and pick one of two options: delete your messages in <b>every channel</b>, or only in <b>this channel</b>.</p>
+      <ul class="list">
+        <li>The first time, the bot asks you to make a password. This is not your Discord password. Please remember it. You type it twice to confirm.</li>
+        <li>The bot saves only a hash of the password (argon2id) next to your user ID.</li>
+        <li>After that, run the command again and type your password to start deleting.</li>
+        <li>Too many wrong tries will lock you out for a while.</li>
+        <li>Discord only lets bots delete in bulk for messages under 14 days old. Older messages are deleted one by one, so it can take a long time.</li>
+      </ul>
+
+      <h2 id="lockdown">Lockdown</h2>
+      <p>A lockdown turns off these things for the @everyone role:</p>
+      <ul class="list">
+        <li>Send messages and create posts</li>
+        <li>Send messages in threads and posts</li>
+        <li>Create public threads</li>
+        <li>Create private threads</li>
+      </ul>
+      <p>When you run <code>/unlock</code>, the bot only turns back on what was on before. So if something was always off, it stays off.</p>
+      <p>The bot posts "Lock down was started." and "Lock down was ended." in the Sakerhet channel. If the channel is gone, the bot makes it again.</p>
+
+      <h2 id="raids">Raid protection</h2>
+      <p>The bot keeps a suspicion meter for each server. It goes up and down over time. It goes up when:</p>
+      <ul class="list">
+        <li>Many people join fast, for example more than 5 in a minute.</li>
+        <li>One person sends lots of messages in a short time.</li>
+        <li>One message mentions the same person more than 4 times.</li>
+      </ul>
+      <p>The bot deletes those messages and kicks the people who sent them. If a huge number of people join at once, the bot starts a lockdown by itself. It ends the lockdown after 10 minutes with no new joins from accounts made in the last 14 days.</p>
+      <p>Admins can change how strict this is with <code>/config</code>.</p>
+
+      <h2 id="links">Bad links</h2>
+      <p>The bot deletes messages that have links to NSFW websites or NSFW Discord servers, almost right away. It uses public block lists. The bot owner can add more with <code>/nsfwadd</code>. The bot logs the user ID, the link and the time. See the <a href="/privacy">privacy page</a>.</p>
+
+      <h2>Help and support</h2>
+      <ul class="list">
+        <li>Join the <a href="/server">Discord server</a>.</li>
+        <li>The code is on <a href="https://github.com/kynorie/sakerhet">GitHub</a>.</li>
+        <li>To donate, look for the Monero and Bitcoin addresses on the GitHub page.</li>
+        <li>If the bot is offline, give it a few hours or a week.</li>
+      </ul>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy Policy</h2>
+      <p>Last updated 21 November 2026.</p>
+      <p>This page explains what Sakerhet stores about you, why, and how to get it deleted. We try to keep it short and simple. We try to store as little as we can.</p>
+
+      <div class="note"><b>The short version:</b> Sakerhet keeps your user ID and a hash of your bulkdelete password. It also keeps a short log when you post a blocked link. Anonymous messages are saved without your user ID. You can delete your data at any time with <code>/forgetme</code>.</div>
+
+      <h2>Who we are</h2>
+      <p>Sakerhet is a free and open source Discord bot. It is made by kynorie. The code is on <a href="https://github.com/kynorie/sakerhet">GitHub</a>. You can reach us in the <a href="/server">Discord server</a> or by opening an issue on GitHub.</p>
+
+      <h2>What Sakerhet stores</h2>
+      <table>
+        <tr><th>Data</th><th>Why</th><th>Linked to you?</th><th>Kept for</th></tr>
+        <tr><td>Your user ID and a hash of your bulkdelete password (argon2id)</td><td>So <code>/bulkdelete</code> and other sensitive commands can check your password.</td><td>Yes</td><td>Until you run <code>/forgetme</code></td></tr>
+        <tr><td>Blocked link log: your user ID, the blocked link and the time</td><td>To keep a record when someone posts an NSFW website or Discord server link.</td><td>Yes</td><td>30 days</td></tr>
+        <tr><td>Anonymous messages: the nickname and the message</td><td>To post and keep a record of anonymous messages.</td><td>No. Your user ID is never saved.</td><td>30 days</td></tr>
+        <tr><td>Lockdown logs: the server ID, the time, and whether the bot or an admin started it</td><td>To show when a server was locked or unlocked.</td><td>No</td><td>30 days</td></tr>
+        <tr><td>Server data: the server ID, the Sakerhet channel and category IDs, lockdown state and your <code>/config</code> settings</td><td>To run lockdown, raid protection and your settings.</td><td>No, it is about the server</td><td>While the bot is in the server</td></tr>
+      </table>
+
+      <h2>What Sakerhet does not store</h2>
+      <p>Sakerhet does not store your messages, your profile picture, your username or anything else about your Discord profile. The only exceptions are the items in the table above.</p>
+
+      <h2>How the bot reads messages</h2>
+      <p>To find bad links, message floods and mention spam, the bot has to see messages in the servers it is in. It checks each message as it arrives and does not save it. The only thing it saves is the blocked link log in the table above.</p>
+
+      <h2>Who can see your data</h2>
+      <ul class="list">
+        <li>Other users and server admins cannot see your data, and they cannot see your password.</li>
+        <li>Your password is only stored as a hash, so nobody can read it.</li>
+        <li>The data is stored in files on the server that runs the bot. Only the bot owner can open those files.</li>
+        <li>We do not sell your data. We do not share it with anyone.</li>
+      </ul>
+      <p>Discord handles everything you send through Discord. Discord has its own privacy policy, and it still applies.</p>
+
+      <h2>Your choices</h2>
+      <ul class="list">
+        <li>Run <code>/forgetme</code> to delete your user ID, your password hash and any blocked link logs about you.</li>
+        <li>Anonymous messages are not linked to you, so <code>/forgetme</code> cannot find them. If you want one removed, contact us and tell us what it says.</li>
+        <li>Do not want the bot to read messages? Remove it from your server.</li>
+      </ul>
+
+      <h2>Security</h2>
+      <p>Passwords are hashed with argon2id. Too many wrong password tries will lock you out for a while. No system is perfect, so please use a password you do not use anywhere else.</p>
+
+      <h2>Children</h2>
+      <p>Sakerhet is only for people who are allowed to use Discord. Discord's minimum age rules apply.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>If we change this policy, we will change the date at the top of this page.</p>
+
+      <h2>Contact</h2>
+      <p>Questions or deletion requests? Join the <a href="/server">Discord server</a> or open an issue on <a href="https://github.com/kynorie/sakerhet">GitHub</a>.</p>
+    </section>
+
+    </div>
+  </div>
+
+  <div id="footer">
+    Sakerhet is open source. <a href="https://github.com/kynorie/sakerhet">View the code on GitHub</a>. Last updated 21 November 2026.
+  </div>
+</div>
+
+<script>
+  (function () {
+    var home = document.getElementById("home");
+    var priv = document.getElementById("privacy");
+
+    function show(isPrivacy) {
+      home.hidden = isPrivacy;
+      priv.hidden = !isPrivacy;
+      document.title = isPrivacy ? "Privacy | Sakerhet" : "Sakerhet";
+    }
+
+    function wantsPrivacy() {
+      var path = location.pathname.replace(/\/+$/, "").toLowerCase();
+      return path.slice(-8) === "/privacy" || location.hash === "#privacy";
+    }
+
+    show(wantsPrivacy());
+    window.addEventListener("hashchange", function () { show(wantsPrivacy()); });
+    window.addEventListener("popstate", function () { show(wantsPrivacy()); });
+
+    // Switch pages without a reload, so it also works in a preview or a local file.
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest ? e.target.closest("a") : null;
+      if (!a) return;
+      var href = a.getAttribute("href");
+      if (!href) return;
+      if (href !== "/privacy" && href !== "/" && href.indexOf("/#") !== 0) return;
+      e.preventDefault();
+      var toPrivacy = href === "/privacy";
+      show(toPrivacy);
+      try {
+        history.pushState(null, "", href);
+      } catch (err) {
+        location.hash = toPrivacy ? "#privacy" : (href === "/" ? "" : href.slice(1));
+      }
+      var target = href.indexOf("/#") === 0 ? document.getElementById(href.slice(2)) : null;
+      if (target) { target.scrollIntoView(); } else { window.scrollTo(0, 0); }
+    });
+  })();
+</script>
+</body>
+</html>
