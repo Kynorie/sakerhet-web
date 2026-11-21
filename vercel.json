@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/privacy", "destination": "/index.html" }
+  ],
+  "redirects": [
+    { "source": "/server", "destination": "https://discord.gg/G2u3XFcTef", "permanent": false }
+  ]
+}
